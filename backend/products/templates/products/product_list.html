@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #999;
+        }
+        th {
+            background-color: #f2f2f2;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        td {
+            padding: 10px;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nos Produits</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Marque</th>
+                <th>Catégorie</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in produits %}
+            <tr>
+                <td>{{ product.nom }}</td>
+                <td>{{ product.marque }}</td>
+                <td>{{ product.categorie }}</td>
+                <td>{{ product.stock }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
